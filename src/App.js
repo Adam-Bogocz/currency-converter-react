@@ -2,6 +2,7 @@ import { useState } from "react";
 import FormNumber from "./FormNumber";
 import FormRadio from "./FormRadio";
 import Section from "./Section";
+import Container from "./Container";
 
 function App() {
   const [cash, setCash] = useState("100");
@@ -30,9 +31,8 @@ function App() {
   console.log(`wynik = ${result}`);
 
   return (
-    <div className="container">
-      <p className="container--result js-result">100.00 PLN = 430.00 EUR</p>
-
+    <Container>
+      <Section className="section__result">100.00 PLN = 430.00 EUR</Section>
       <Section className="section__formRadio">
         <FormRadio
           option1={"EUR"}
@@ -67,7 +67,7 @@ function App() {
           />
         </>
       </Section>
-    </div>
+    </Container>
   );
 }
 

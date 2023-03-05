@@ -7,3 +7,12 @@
 .section__formNumber {
     background-color: #94b1b67c;
 }
+
+.section__result {
+    margin: auto;
+    line-height: 50px;
+    background: #9ae7f5cc;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 5px;
+}
