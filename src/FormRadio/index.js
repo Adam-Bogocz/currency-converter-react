@@ -7,9 +7,9 @@ const FormRadio = ({ name, target, option1, option2, setTarget }) => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <label className="form__labelText">
+      <label className="formRadio__labelText">
         <input
-          className="label__tekst"
+          className="formRadio__field"
           type="radio"
           name={name}
           checked={target}
@@ -18,9 +18,9 @@ const FormRadio = ({ name, target, option1, option2, setTarget }) => {
         />
         {option1}
       </label>
-      <label className="form__labelText">
+      <label className="formRadio__labelText">
         <input
-          className="label__tekst"
+          className="formRadio__field"
           type="radio"
           name={name}
           value={option2}

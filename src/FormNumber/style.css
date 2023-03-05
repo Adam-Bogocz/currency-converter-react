@@ -1,10 +1,10 @@
-.form__labelText {
+.formNumber__labelText {
     width: 100%;
     max-width: 170px;
     margin: 5px;
 }
 
-.form__field {
+.formNumber__field {
     margin: 15px;
     border: 2px solid #ebf4f5cc;
     padding: 5px 5px;
@@ -13,6 +13,6 @@
     border-radius: 5px;
 }
 
-.form__field:required {
+.formNumber__field:required {
     background-color: #f5d8d8cc;
 }

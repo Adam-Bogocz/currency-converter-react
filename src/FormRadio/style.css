@@ -1,14 +1,13 @@
-.form__labelText {
+.formRadio__labelText {
     width: 100%;
     max-width: 170px;
-    margin: 5px;
+    padding: 5px;
 }
 
-.form__field {
-    margin: 15px;
+.formRadio__field {
+    margin: 5px;
     border: 2px solid #ebf4f5cc;
-    padding: 5px 5px;
-    width: 20%;
-    min-width: 100px;
-    border-radius: 5px;
+    padding: 0px 0px;
+    /* width: 10%; */
+    border-radius: 15px;
 }
