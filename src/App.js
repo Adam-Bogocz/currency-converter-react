@@ -3,25 +3,29 @@ import FormNumber from "./FormNumber";
 import FormRadio from "./FormRadio";
 import Section from "./Section";
 import Container from "./Container";
+import Result from "./Result";
 
 function App() {
   const [cash, setCash] = useState("100");
   const [exchangeRate, setExchangeRate] = useState("4.3");
   const [currency, setCurrency] = useState("EUR");
   const [direction, setDirection] = useState(true);
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(Number);
+  const [visualResult, setVisualResult] = useState("");
 
   const toggleDirection = () => {
     setDirection((direction) => !direction);
   };
 
-  const calculateResult = (cash, exchangeRate, direction) => {
-    switch (direction) {
-      case true:
-        return (result = cash * exchangeRate);
-      case false:
-        return (result = cash / exchangeRate);
-    }
+  const calculateResult = () => {
+    setResult(() => {
+      switch (direction) {
+        case true:
+          return cash * exchangeRate;
+        case false:
+          return cash / exchangeRate;
+      }
+    });
   };
 
   console.log(`cash = ${cash}`);
@@ -32,7 +36,18 @@ function App() {
 
   return (
     <Container>
-      <Section className="section__result">100.00 PLN = 430.00 EUR</Section>
+      <Section className="section__result">
+        <Result
+          cash={cash}
+          exchangeRate={exchangeRate}
+          direction={direction}
+          currency={currency}
+          result={result}
+          calculateResult={calculateResult}
+          visualResult={visualResult}
+          setVisualResult={setVisualResult}
+        />
+      </Section>
       <Section className="section__formRadio">
         <FormRadio
           option1={"EUR"}
