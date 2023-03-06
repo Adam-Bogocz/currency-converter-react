@@ -13,7 +13,7 @@ const Result = ({
   const sourceCurrency = "PLN";
 
   calculateResult(direction, cash, exchangeRate);
-  setVisualResult((visualResult) => {
+  setVisualResult(() => {
     switch (direction) {
       case true: {
         return `${cash} ${sourceCurrency} = ${result.toFixed(2)} ${currency}`;
