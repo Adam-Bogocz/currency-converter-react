@@ -4,6 +4,7 @@ import FormRadio from "./FormRadio";
 import Section from "./Section";
 import Container from "./Container";
 import Result from "./Result";
+import FormRadioTasks from "./FormRadioTasks";
 
 function App() {
   const [cash, setCash] = useState("100");
@@ -12,6 +13,15 @@ function App() {
   const [direction, setDirection] = useState(true);
   const [result, setResult] = useState(Number);
   const [visualResult, setVisualResult] = useState("");
+
+  const [cur, setCur] = useState("USD");
+  const [tasks, setTasks] = useState([ 
+    {id: 1, cur: "EUR", rate: 4.71},
+    {id: 2, cur: "USD", rate: 4.47},
+  ]);
+
+  console.log([tasks]);
+  console.log(`cur = ${cur}`);
 
   const toggleDirection = () => {
     setDirection((direction) => !direction);
@@ -28,11 +38,11 @@ function App() {
     });
   };
 
-  console.log(`cash = ${cash}`);
-  console.log(`kurs${currency} = ${exchangeRate}`);
-  console.log(`waluta = ${currency}`);
-  console.log(`direction = ${direction}`);
-  console.log(`wynik = ${result}`);
+  // console.log(`cash = ${cash}`);
+  // console.log(`kurs${currency} = ${exchangeRate}`);
+  // console.log(`waluta = ${currency}`);
+  // console.log(`direction = ${direction}`);
+  // console.log(`wynik = ${result}`);
 
   return (
     <Container>
@@ -81,6 +91,11 @@ function App() {
             step={"0.1"}
           />
         </>
+      </Section>
+      <Section className="section__formRadio">
+        <FormRadioTasks tasks={tasks}
+        target={cur}
+        setTartet={setCur} />
       </Section>
     </Container>
   );
