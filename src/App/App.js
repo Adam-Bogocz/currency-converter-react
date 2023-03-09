@@ -11,13 +11,13 @@ function App() {
   const [exchangeRate, setExchangeRate] = useState("4.3");
   const [currency, setCurrency] = useState("EUR");
   const [direction, setDirection] = useState(true);
-  const [result, setResult] = useState(Number);
+  const [result, setResult] = useState(0);
   const [visualResult, setVisualResult] = useState("");
 
   const [cur, setCur] = useState("USD");
-  const [tasks, setTasks] = useState([ 
-    {id: 1, cur: "EUR", rate: 4.71},
-    {id: 2, cur: "USD", rate: 4.47},
+  const [tasks, setTasks] = useState([
+    { id: 1, cur: "EUR", rate: 4.71 },
+    { id: 2, cur: "USD", rate: 4.47 },
   ]);
 
   console.log([tasks]);
@@ -93,9 +93,7 @@ function App() {
         </>
       </Section>
       <Section className="section__formRadio">
-        <FormRadioTasks tasks={tasks}
-        target={cur}
-        setTartet={setCur} />
+        <FormRadioTasks tasks={tasks} target={cur} setTartet={setCur} />
       </Section>
     </Container>
   );
