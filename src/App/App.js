@@ -4,7 +4,7 @@ import FormRadio from "./FormRadio";
 import Section from "./Section";
 import Container from "./Container";
 import Result from "./Result";
-import FormRadioTasks from "./FormRadioTasks";
+import FormRadioAuto from "./FormRadioAuto";
 
 function App() {
   const [cash, setCash] = useState("100");
@@ -13,15 +13,6 @@ function App() {
   const [direction, setDirection] = useState(true);
   const [result, setResult] = useState(0);
   const [visualResult, setVisualResult] = useState("");
-
-  const [cur, setCur] = useState("USD");
-  const [tasks, setTasks] = useState([
-    { id: 1, cur: "EUR", rate: 4.71 },
-    { id: 2, cur: "USD", rate: 4.47 },
-  ]);
-
-  console.log([tasks]);
-  console.log(`cur = ${cur}`);
 
   const toggleDirection = () => {
     setDirection((direction) => !direction);
@@ -93,7 +84,7 @@ function App() {
         </>
       </Section>
       <Section className="section__formRadio">
-        <FormRadioTasks tasks={tasks} target={cur} setTartet={setCur} />
+        <FormRadioAuto />
       </Section>
     </Container>
   );
