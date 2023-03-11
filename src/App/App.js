@@ -4,7 +4,7 @@ import { Result } from "./Result";
 import Form from "./Form";
 
 function App() {
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState();
 
   const calculateResult = (direction, cash, currency, exchangeRate) => {
     if (direction === `PLN »`) {
@@ -30,9 +30,7 @@ function App() {
     <p>
       <div className="app">
         <section className="section__result">
-          <p>
-            <Result result={result} />
-          </p>
+          <Result result={result} />
         </section>
         {/* <Section className="section__formRadio"> */}
         <Form result={result} calculateResult={calculateResult} />
