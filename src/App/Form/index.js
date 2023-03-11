@@ -68,15 +68,15 @@ const Form = ({ calculateResult, result }) => {
       </fieldset>
 
       <fieldset className="section__formNumber">
-        <FormNumber
-          title={`Podaj kwotę`}
-          target={cash}
-          setTarget={setCash}
-          value={cash}
-          step={"1"}
-        />
-        {currency !== undefined && (
+        {direction !== undefined && (
           <>
+            <FormNumber
+              title={`Podaj kwotę`}
+              target={cash}
+              setTarget={setCash}
+              value={cash}
+              step={"1"}
+            />
             <FormNumber
               title={`kurs ${currency}`}
               target={exchangeRate}
@@ -84,7 +84,7 @@ const Form = ({ calculateResult, result }) => {
               value={exchangeRate}
               step={"0.1"}
             />
-          <button onClick={onFormRadioChange}>Oblicz</button>
+            <button onClick={onFormRadioChange}>Oblicz</button>
           </>
         )}
       </fieldset>
