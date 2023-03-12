@@ -1,17 +1,17 @@
-import "./style.css";
+import "./formStyle.css";
 import { useState } from "react";
 import { currencies } from "../currencies";
-import FormNumber from "../FormNumber";
+import FormNumber from "../FormNumber/formNumber";
 
 const Form = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState();
   const [cash, setCash] = useState(100);
-  const [exchangeRate, setExchangeRate] = useState("4.3");
+  const [exchangeRate, setExchangeRate] = useState("");
   const [direction, setDirection] = useState();
 
   const directions = [
-    {key:0, name: `PLN » ${currency}`, direction: `PLN »` },
-    {key:1, name: `${currency} » PLN`, direction: `» PLN` },
+    { key: 0, name: `PLN » ${currency}`, direction: `PLN »` },
+    { key: 1, name: `${currency} » PLN`, direction: `» PLN` },
   ];
 
   const setDefaultRate = () => {
@@ -68,22 +68,22 @@ const Form = ({ calculateResult, result }) => {
       </fieldset>
 
       <fieldset className="section__formNumber">
+        <FormNumber
+          title={`Podaj kwotę`}
+          target={cash}
+          setTarget={setCash}
+          value={cash}
+          step={"1"}
+        />
+        <FormNumber
+          title={`kurs ${currency}`}
+          target={exchangeRate}
+          setTarget={setExchangeRate}
+          value={exchangeRate}
+          step={"0.1"}
+        />
         {direction !== undefined && (
           <>
-            <FormNumber
-              title={`Podaj kwotę`}
-              target={cash}
-              setTarget={setCash}
-              value={cash}
-              step={"1"}
-            />
-            <FormNumber
-              title={`kurs ${currency}`}
-              target={exchangeRate}
-              setTarget={setExchangeRate}
-              value={exchangeRate}
-              step={"0.1"}
-            />
             <button onClick={onFormRadioChange}>Oblicz</button>
           </>
         )}

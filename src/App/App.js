@@ -1,11 +1,12 @@
-import "./app.css";
+import "./appStyle.css";
 import { useState } from "react";
-import { Result } from "./Result";
-import Form from "./Form";
+import { Result } from "./Result/result";
+import Form from "./Form/form";
+import Date from "./Clock/clock";
 
 function App() {
   const [result, setResult] = useState();
-
+  
   const calculateResult = (direction, cash, currency, exchangeRate) => {
     if (direction === `PLN »`) {
       setResult({
@@ -27,15 +28,19 @@ function App() {
   };
 
   return (
-    <p>
+    <container>
       <div className="app">
         <section className="section__result">
           <Result result={result} />
         </section>
-        {/* <Section className="section__formRadio"> */}
-        <Form result={result} calculateResult={calculateResult} />
+        <section className="section__formRadio">
+          
+            <Date/>
+          
+          <Form result={result} calculateResult={calculateResult} />
+        </section>
       </div>
-    </p>
+    </container>
   );
 }
 

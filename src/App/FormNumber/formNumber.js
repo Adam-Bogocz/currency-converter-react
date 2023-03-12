@@ -1,4 +1,4 @@
-import "./style.css";
+import "./formNumberStyle.css";
 
 const FormNumber = ({ title, step, target, setTarget }) => {
   const onFormSubmit = (event) => {

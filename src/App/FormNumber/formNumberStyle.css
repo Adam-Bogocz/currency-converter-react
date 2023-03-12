@@ -1,11 +1,11 @@
 .formNumber__labelText {
-    width: 100%;
+    /* width: 100%; */
     max-width: 170px;
     margin: 5px;
 }
 
 .formNumber__field {
-    margin: 15px;
+    margin: 15px 5px;
     border: 2px solid #ebf4f5cc;
     padding: 5px 5px;
     width: 20%;

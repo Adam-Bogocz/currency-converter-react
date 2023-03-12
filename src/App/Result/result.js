@@ -1,4 +1,4 @@
-import "./style.css";
+import "./resultStyle.css";
 
 export const Result = ({ result }) => {
   

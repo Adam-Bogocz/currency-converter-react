@@ -1,24 +1,33 @@
 .app {
-    max-width: 400px;
+    
+    min-height: 800px;
+    min-width:280px;
+    max-width: 350px;
     margin: auto;
     padding: 200px 12px;
 }
 
 .section__formRadio {
+    min-width: 280px;
+    min-height: 120px;
     background-color: #f5d8d754;
     border: 2px solid #46b4a2cc;
     border-radius: 5px;
 }
 
 .section__formNumber {
+    min-height: 170px;
+    min-width:280px;
     background-color: #94b1b67c;
 }
 
 .section__result {
+    min-width:280px;
+    min-height: 50px;
     margin: auto;
     line-height: 50px;
     background: #9ae7f5cc;
     font-size: 20px;
-    padding: 12px;
+    padding: 0px 12px;
     border-radius: 6px;
 }
