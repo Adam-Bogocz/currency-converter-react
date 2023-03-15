@@ -2,7 +2,7 @@ import "./appStyle.css";
 import { useState } from "react";
 import { Result } from "./Result/result";
 import Form from "./Form/form";
-import Date from "./Clock/clock";
+import NDate from "./Clock/clock";
 
 function App() {
   const [result, setResult] = useState();
@@ -34,9 +34,7 @@ function App() {
           <Result result={result} />
         </section>
         <section className="section__formRadio">
-          
-            <Date/>
-          
+          <NDate/>
           <Form result={result} calculateResult={calculateResult} />
         </section>
       </div>
