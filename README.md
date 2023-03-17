@@ -1,5 +1,5 @@
 # Currency-Converter-React
-[See my Homepage](https://adam-bogocz.github.io/Currency-Converter/)
+[See my Homepage](https://adam-bogocz.github.io/currency-converter-react/)
 ## Hi. This is my next repository in React.js
 
 
