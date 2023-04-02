@@ -30,8 +30,8 @@ const Form = ({ calculateResult, result }) => {
   console.log(result);
 
   return (
-    <section>
-      <fieldset className="section__formRadio">
+    <>
+      <fieldset className="formRadio">
         <form>
           <p>Podaj walutę:</p>
           {currencies.map((currencies) => (
@@ -67,7 +67,7 @@ const Form = ({ calculateResult, result }) => {
         </form>
       </fieldset>
 
-      <fieldset className="section__formNumber">
+      <fieldset className="formNumberBlock">
         <FormNumber
           title={`Podaj kwotę`}
           target={cash}
@@ -88,7 +88,7 @@ const Form = ({ calculateResult, result }) => {
           </>
         )}
       </fieldset>
-    </section>
+    </>
   );
 };
 
