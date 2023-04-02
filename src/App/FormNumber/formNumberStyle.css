@@ -1,18 +1,19 @@
+.formNumber {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
 .formNumber__labelText {
-    /* width: 100%; */
-    max-width: 170px;
-    margin: 5px;
+    flex: auto;
 }
 
 .formNumber__field {
-    margin: 15px 5px;
     border: 2px solid #ebf4f5cc;
-    padding: 5px 5px;
-    width: 20%;
-    min-width: 100px;
+    padding: 5px;
+    margin: 5px;
+    width: 30%;
     border-radius: 5px;
-}
-
-.formNumber__field:required {
-    background-color: #f5d8d8cc;
+    background-color: #e0cececc;
 }

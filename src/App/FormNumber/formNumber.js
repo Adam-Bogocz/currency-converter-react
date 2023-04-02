@@ -6,7 +6,7 @@ const FormNumber = ({ title, step, target, setTarget }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className="formNumber" onSubmit={onFormSubmit}>
       <label className="formNumber__labelText">{title}</label>
       <input
         className="formNumber__field"
