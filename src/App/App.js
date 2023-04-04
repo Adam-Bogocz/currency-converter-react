@@ -27,6 +27,10 @@ function App() {
     }
   };
 
+  const handleReload = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="calculator">
       <section className="section__result">
@@ -38,6 +42,9 @@ function App() {
       <section className="section__form">
         <Form result={result} calculateResult={calculateResult} />
       </section>
+      <button className="section__reset" onClick={handleReload}>
+        Reset
+      </button>
     </div>
   );
 }
