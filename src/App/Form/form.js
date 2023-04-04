@@ -1,12 +1,12 @@
 import "./formStyle.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { currencies } from "../currencies";
 import FormNumber from "../FormNumber/formNumber";
 
 const Form = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState();
-  const [cash, setCash] = useState(100);
-  const [exchangeRate, setExchangeRate] = useState("");
+  const [cash, setCash] = useState();
+  const [exchangeRate, setExchangeRate] = useState();
   const [direction, setDirection] = useState();
 
   const directions = [
@@ -18,16 +18,19 @@ const Form = ({ calculateResult, result }) => {
     setExchangeRate(currencies.find(({ short }) => short === currency).rate);
   };
 
-  const onFormRadioChange = () => {
-    calculateResult(direction, cash, currency, exchangeRate);
-  };
+  useEffect(() => {
+    if (
+      cash !== undefined &&
+      direction !== undefined &&
+      currency !== undefined &&
+      exchangeRate !== undefined
+    )
+      calculateResult(direction, cash, currency, exchangeRate);
+  }, [currency, exchangeRate, cash, direction]);
 
-  console.log(`cash = ${cash}`);
-  console.log(`kurs${currency} = ${exchangeRate}`);
-  console.log(`waluta = ${currency}`);
-  console.log({ currency });
-  console.log({ direction });
-  console.log(result);
+  useEffect(() => {
+    if (currency !== undefined) setDefaultRate();
+  }, [currency]);
 
   return (
     <>
@@ -75,16 +78,15 @@ const Form = ({ calculateResult, result }) => {
           value={cash}
           step={"1"}
         />
-        <FormNumber
-          title={`kurs ${currency}`}
-          target={exchangeRate}
-          setTarget={setExchangeRate}
-          value={exchangeRate}
-          step={"0.1"}
-        />
-        {direction !== undefined && (
+        {currency !== undefined && (
           <>
-            <button onClick={onFormRadioChange}>Oblicz</button>
+            <FormNumber
+              title={`kurs ${currency}`}
+              target={exchangeRate}
+              setTarget={setExchangeRate}
+              value={exchangeRate}
+              step={"0.1"}
+            />
           </>
         )}
       </fieldset>
