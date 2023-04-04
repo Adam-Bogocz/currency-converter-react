@@ -12,6 +12,7 @@ html {
   align-items: center;
   justify-content: center;
   background-image: url("background.png");  
+  height:900px;
   background-size: cover;
   background-position: center;
 }
