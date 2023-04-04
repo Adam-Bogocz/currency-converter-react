@@ -3,7 +3,7 @@
 ## Hi. This is my next repository in React.js
 
 
-![Demo](https://github.com/Adam-Bogocz/Currency-Converter/blob/main/images/demo.gif?raw=true)
+![Demo](https://github.com/Adam-Bogocz/currency-converter-react/blob/main/public/demo.gif?raw=true)
 
 ## Technologies:
 - Html
